@@ -19,16 +19,3 @@ services:
         sync: false
       - key: SESSION_SECRET
         generateValue: true
-
-  - type: worker
-    name: sydney-scraper-worker
-    env: node
-    rootDir: backend
-    plan: free
-    buildCommand: npm install
-    startCommand: npm run worker
-    envVars:
-      - key: MONGO_URI
-        sync: false
-      - key: REDIS_URI
-        sync: false
